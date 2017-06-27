@@ -5,6 +5,7 @@ All code was written from scratch(HTML & CSS). The CSS bliff methodology was use
 
 ## Approach
 Main focus was the front page
+
 Views module was used for custom blocks
 Custom node templates created for required nodes
 Custom view templates created for required views

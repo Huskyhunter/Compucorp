@@ -48,6 +48,12 @@ body{
 	font-size:16px;
 	min-width:300px;
 }
+a {
+	color: inherit;
+	text-decoration: none;
+	&:hover{ text-decoration: underline; }
+}
+
 
 nav{ 
 	background-color: #fff; 
@@ -196,6 +202,7 @@ nav{
 	.article-peek{
 		.padding-horizontal();
 		.border-horizontal();
+		min-height: 106px;
 	}
 	.article-date{
 		.padding-horizontal();
@@ -210,6 +217,25 @@ nav{
 footer{
 	background: @color-secondary;
 	.txt-c();
+	.footer-social{
+		margin-bottom: 15px;
+		padding-bottom: 15px;
+		border-bottom:1px #575b64 solid;
+		img{ margin: 0 15px; &:hover{ cursor: pointer; } }
+	}
+	a{ color: @color-primary; .no-text-decoration(); cursor: pointer; }
+	.footer-note{ color: #969eb6; font-weight:500; margin: 15px; }
+}
+
+#overlayer{
+	display:none;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.70);
+	z-index:5;
+	top: 0px;
+	left: 0px;
 }
 
 .owl-carousel{
@@ -225,13 +251,13 @@ footer{
 	.owl-nav{
 		position: absolute;
 		bottom: 0px;
-		left: 20px;
+		padding: 20px;
 		.owl-prev, .owl-next {
-			background-size: 11px;	
+			background-size: 15px;	
 			background-repeat:no-repeat;
-			background: url(vendors/owl/img/chevron.png);
+			background-image: url(../vendors/owl/img/chevron.png);
 			background-position:0px 0px;
-			width:10px; 
+			width:15px; 
 			height: 15px;
 			padding-left:20px; 
 			line-height: 0px;
@@ -239,7 +265,7 @@ footer{
 			&.disabled{ background-position:0px -15px; }
 		}
 		.owl-next{
-			transform:scaleX(-1);
+			.transform(scaleX(-1));
 		}
 	}
 	.owl-dots{
@@ -311,7 +337,7 @@ footer{
 		.links{
 			display: inline-block;
 			position: static;
-			margin: 18px;
+			margin-right: 18px;
 			width: auto;
 			height: auto;
 			border: 0px;
@@ -353,26 +379,24 @@ footer{
 		}
 		.owl-nav{
 			position: absolute;
-			top: 43%;
-			left:0px;
+			top: 35%;
+			left: 0px;
 			width:100%;
 			.owl-prev, .owl-next { 
-				background-position:0px 0px;
-				background-repeat: no-repeat;
 				background-size: 30px;
 				width: 30px;
-				height: 40px;  
+				height: 30px;  
 				padding-left:0px;
 				margin-left: -20px;
 				margin-right: -20px;
-				&.disabled { background-position:0px -40px; }
+				&.disabled { background-position:0px -30px; }
 			}
 			.owl-prev{ 
 				float: left; 
 			}
 			.owl-next{
 				float: right;
-				transform:scaleX(-1);
+				.transform(scaleX(-1));
 			}
 		}
 	}
@@ -422,8 +446,8 @@ footer{
 	#cover{
 		.cover-content{
 			width:100%;
-			.cover-title{ font-size:16px; font-weight:800; }
-			p{ font-size: 14px; width:95%; }
+			.cover-title{ font-size:18px; font-weight:800; }
+			p{ font-size: 16px; width:95%; }
 		}
 		.cover-img{
 			img{
@@ -514,6 +538,7 @@ footer{
 .no-padding-bottom{ padding-bottom: 0px; }
 .no-padding-vertical{ padding-left: 0px; padding-right: 0px; }
 .no-padding-horizontal{ padding-top: 0px; padding-bottom: 0px; }
+.no-margin{ margin: 0px; }
 .border{ border: 1px solid #d9dadd; }
 .border-top{ border-top: 1px solid #d9dadd; }
 .border-right{ border-right: 1px solid #d9dadd; }
@@ -521,3 +546,16 @@ footer{
 .border-left{ border-left: 1px solid #d9dadd; }
 .border-horizontal{ border-top: 1px solid #d9dadd;  border-bottom: 1px solid #d9dadd; }
 .border-verical{ border-right: 1px solid #d9dadd;  border-left: 1px solid #d9dadd; }
+.no-list-style{ list-style:none; }
+.no-text-decoration{ text-decoration:none; }
+
+/* Drupal Edit Button */
+.btn-edit{ text-align:left; }
+
+.btn-edit a{
+	.border-radius(7px);
+	background: lightblue;
+	color: #000;
+	padding: 5px;
+	font-size: 13px;
+}
